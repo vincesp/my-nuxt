@@ -1,34 +1,16 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        my-nuxt
-      </h1>
-      <h2 class="subtitle">
-        My bedazzling Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+    <div v-for="blogPost in blogPosts">
+      <nuxt-link :to="'blog/' + blogPost.slug">
+        {{blogPost.title}} {{blogPost.slug}}
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Logo from '~/components/Logo.vue'
 
 export default {
@@ -39,7 +21,10 @@ export default {
     return {
       script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
     }
-  }
+  },
+  computed: mapState([
+    'blogPosts',
+  ])
 }
 </script>
 
