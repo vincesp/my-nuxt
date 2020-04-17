@@ -36,7 +36,7 @@ collections:
         multiple: true
         searchFields: ['title', 'duration', 'price']
         valueField: 'title'
-        displayFields: ['duration', 'price']
+        displayFields: ['title', 'duration', 'price']
 
   - name: 'prices'
     label: 'Price'
