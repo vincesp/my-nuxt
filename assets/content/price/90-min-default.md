@@ -1,0 +1,5 @@
+---
+title: 90 min default
+duration: 90
+price: 1000
+---
