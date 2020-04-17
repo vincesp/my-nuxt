@@ -25,7 +25,6 @@ collections:
     format: 'json'
     folder: 'assets/content/treatment'
     create: true
-    slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string', required: false }
@@ -35,15 +34,15 @@ collections:
         widget: 'relation'
         collection: 'prices'
         multiple: true
-        searchFields: ['duration', 'price']
-        valueField: 'price'
+        searchFields: ['title', 'duration', 'price']
+        valueField: 'title'
         displayFields: ['duration', 'price']
 
   - name: 'prices'
     label: 'Price'
     folder: 'assets/content/price'
     create: true
-    slug: '{{slug}}'
     fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Duration', hint: 'in minutes', name: 'duration', widget: 'number', valueType: 'int', min: 0 }
       - { label: 'Price', hint: 'in INR', name: 'price', widget: 'number', valueType: 'float', min: 0 }
