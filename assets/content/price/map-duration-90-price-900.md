@@ -1,4 +1,4 @@
 ---
 duration: 90
-price: 900
+price: 1000
 ---
