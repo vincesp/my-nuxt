@@ -19,3 +19,31 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'treatments'
+    label: 'Treatment'
+    format: 'json'
+    folder: 'assets/content/treatment'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - label: 'Prices'
+        name: 'prices'
+        widget: 'relation'
+        collection: 'prices'
+        multiple: true
+        searchFields: ['duration', 'price']
+        valueField: 'price'
+        displayFields: ['duration', 'price']
+
+  - name: 'prices'
+    label: 'Price'
+    folder: 'assets/content/price'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Duration', hint: 'in minutes', name: 'duration', widget: 'number', valueType: 'int', min: 0 }
+      - { label: 'Price', hint: 'in INR', name: 'price', widget: 'number', valueType: 'float', min: 0 }
