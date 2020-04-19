@@ -33,4 +33,6 @@ jobs:
         echo test, and deploy your project.
     
     - name: Run a one-line script
-      run: yarn nuxt generate
+      run: |
+        yarn
+        yarn nuxt generate
