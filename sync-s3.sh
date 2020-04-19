@@ -7,4 +7,4 @@ ${AWS_REGION}
 text
 EOF
 
-aws s3 sync ./dist s3://${AWS_BUCKET}/ --profile s3-sync-action --acl public-read --follow-symlinks --delete
+aws s3 sync ./dist s3://${AWS_S3_BUCKET}/ --profile s3-sync-action --acl public-read --follow-symlinks --delete
