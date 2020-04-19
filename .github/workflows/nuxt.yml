@@ -24,7 +24,9 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: echo ${{ secrets.AWS_S3_BUCKET }}
+      run: |
+        mkdir dist
+        echo ${{ secrets.AWS_S3_BUCKET }} > dist/bucket.txt
     
     - name: Run a one-line script
       run: |
