@@ -40,6 +40,7 @@ collections:
 
   - name: 'prices'
     label: 'Price'
+    format: 'json'
     folder: 'assets/content/price'
     create: true
     fields:
