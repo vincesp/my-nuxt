@@ -1,5 +1,0 @@
----
-title: 60 min default
-duration: 60
-price: 700
----
