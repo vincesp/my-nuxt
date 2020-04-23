@@ -34,9 +34,9 @@ collections:
         widget: 'relation'
         collection: 'prices'
         multiple: true
-        searchFields: ['title', 'duration', 'price']
+        searchFields: &allfields ['title', 'duration', 'price']
         valueField: 'title'
-        displayFields: ['title', 'duration', 'price']
+        displayFields: *allfields
 
   - name: 'prices'
     label: 'Price'
