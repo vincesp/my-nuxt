@@ -15,7 +15,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - &title { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
@@ -26,7 +26,7 @@ collections:
     folder: 'assets/content/treatment'
     create: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - *title
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Image', name: 'image', widget: 'image', required: false }
       - label: 'Prices'
@@ -44,6 +44,6 @@ collections:
     folder: 'assets/content/price'
     create: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - *title
       - { label: 'Duration', hint: 'in minutes', name: 'duration', widget: 'number', valueType: 'int', min: 0 }
       - { label: 'Price', hint: 'in INR', name: 'price', widget: 'number', valueType: 'float', min: 0 }
